@@ -139,20 +139,11 @@ function toggleMenu() {
 
   state.isMenuOpen = !state.isMenuOpen;
   if (state.isMenuOpen) {
-    menu.classList.remove('hidden');
-    menu.classList.add('flex', 'fade-in');
-    menu.classList.remove('fade-out');
+    menu.style.display = 'flex';
     menuIcon.classList.add('hidden');
     xIcon.classList.remove('hidden');
   } else {
-    menu.classList.remove('fade-in');
-    menu.classList.add('fade-out');
-    setTimeout(() => {
-      if (!state.isMenuOpen) {
-        menu.classList.add('hidden');
-        menu.classList.remove('flex');
-      }
-    }, 300);
+    menu.style.display = 'none';
     menuIcon.classList.remove('hidden');
     xIcon.classList.add('hidden');
   }
