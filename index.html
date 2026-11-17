@@ -1,249 +1,387 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BetonTrade - ЖБИ от производителя | Шымкент</title>
-    <meta name="description" content="Производство ЖБИ в Шымкенте напрямую от завода BetonTrade. Лотки арычные, крышки лотков, теплотрассы, бордюры, бруски. Качество по ГОСТ.">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              concrete: '#F7F5F2',
-              dark: '#1A1A1A',
-              rust: '#F2994A',
-              copper: '#A67C52',
-              muted: '#5A5A5A',
-              card: '#FFFFFF',
-            },
-            fontFamily: {
-              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BetonTrade — Завод ЖБИ в Шымкенте | Лотки, бордюры, бруски от производителя</title>
+  <meta name="description" content="Завод железобетонных изделий BetonTrade в Шымкенте: лотки арычные и теплотрасс, ЖБ крышки лотков, лотки телескопические, бордюры, тротуарная плитка и бруски. Производство по ГОСТ, отгрузка напрямую с завода.">
+  <meta name="theme-color" content="#F7F7F4">
+  <meta property="og:title" content="BetonTrade — Завод ЖБИ в Шымкенте">
+  <meta property="og:description" content="Железобетонные изделия собственного производства по ГОСТ. Лотки, бордюры, плитка, бруски. Отгрузка напрямую с завода.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="hero-bg.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=3">
+  <link rel="preload" as="image" href="hero-bg.jpg" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            oxford: '#002147',
+            deep: '#001228',
+            gold: '#B7A17A',
+            slate: '#5D6C7E',
+            ivory: '#F7F7F4',
+          },
+          fontFamily: {
+            sans: ['Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           }
         }
       }
-    </script>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "BetonTrade Company",
+    "description": "Производство железобетонных изделий: лотки, бордюры, плитка, бруски. Шымкент.",
+    "telephone": "+7 702 295 00 40",
+    "email": "betontradecompany@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Койкелди батыра, 21",
+      "addressLocality": "Шымкент",
+      "addressCountry": "KZ"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 42.293381, "longitude": 69.651204 }
+  }
+  </script>
 </head>
-<body class="font-sans bg-concrete text-dark">
+<body class="font-sans bg-ivory text-oxford antialiased">
 
   <!-- PRELOADER -->
   <div id="preloader" class="preloader">
-    <div class="preloader-spinner"></div>
+    <div class="preloader-inner">
+      <svg viewBox="0 0 44 40" class="w-11 h-10" aria-hidden="true">
+        <rect x="0" y="14" width="26" height="26" rx="5" fill="#002147"/>
+        <rect x="30" y="0" width="14" height="14" rx="3.5" fill="#B7A17A"/>
+        <rect x="30" y="22" width="14" height="10" rx="3" fill="#002147" opacity=".8"/>
+      </svg>
+      <div class="preloader-bar"><span></span></div>
+    </div>
   </div>
 
   <!-- NOISE OVERLAY -->
   <div class="noise-overlay"></div>
 
   <!-- HEADER -->
-  <header id="header" class="fixed top-0 w-full z-50 transition-all duration-500 header-dark">
-    <div class="max-w-[1400px] mx-auto px-6 flex items-center justify-between h-20">
-      <a href="#" onclick="scrollToTop(event)" class="relative z-10">
-        <img src="LogoBTCorange-2.png" alt="BetonTrade" class="h-[58px] w-auto">
-      </a>
+  <header id="header" class="fixed top-0 inset-x-0 z-[80]">
+    <div class="header-shell">
+      <div class="container-x relative flex items-center justify-between h-[72px] lg:h-[88px]">
 
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="#catalog" class="nav-link text-[12px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors duration-300">Каталог</a>
-        <a href="#about" class="nav-link text-[12px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors duration-300">О заводе</a>
-        <a href="#advantages" class="nav-link text-[12px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors duration-300">Преимущества</a>
-        <a href="#delivery" class="nav-link text-[12px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors duration-300">Доставка</a>
-        <a href="#certificates" class="nav-link text-[12px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors duration-300">Сертификаты</a>
-        <a href="#contacts" class="nav-link text-[12px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors duration-300">Контакты</a>
-      </nav>
+        <a href="#" onclick="scrollToTop(event)" class="relative z-10 shrink-0">
+          <img src="LogoBTCorange-2.png" alt="BetonTrade" width="182" height="64" class="brand-logo h-12 lg:h-16 w-auto block">
+          <img src="LogoBTCgold.png" alt="" aria-hidden="true" width="182" height="64" class="brand-logo-gold h-12 lg:h-16 w-auto block hidden">
+        </a>
 
-      <div class="hidden lg:flex items-center gap-6">
-        <div class="flex flex-col items-end">
-          <span class="text-[10px] text-muted uppercase tracking-[0.15em] font-semibold mb-0.5">Казахстан</span>
-          <a href="tel:+77022950040" class="text-[14px] font-semibold text-dark hover:text-rust transition-colors font-mono">+7 702 295 00 40</a>
+        <div class="flex items-center gap-5">
+          <div class="hidden min-[1360px]:flex flex-col items-end leading-tight">
+            <span class="text-[9px] font-bold uppercase tracking-[0.24em] text-slate">Шымкент</span>
+            <a href="tel:+77022950040" class="text-[14px] font-extrabold text-oxford tnum hover:text-gold transition-colors duration-300 mt-0.5 py-1">+7 702 295 00 40</a>
+          </div>
+          <a href="#" onclick="event.preventDefault();openModal('form')" class="hidden sm:inline-flex btn-pill btn-pill-sm btn-pill-primary">
+            <span>Оставить заявку</span>
+            <span class="btn-orb"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+          </a>
+          <button onclick="toggleMenu()" class="relative z-10 p-2 -mr-2 bg-transparent border-none cursor-pointer" aria-label="Меню">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="burger text-oxford"><line x1="3" x2="21" y1="8" y2="8"/><line x1="3" x2="21" y1="16" y2="16"/></svg>
+            <svg id="x-icon" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="burger text-white hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
         </div>
-        <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" class="bg-[#25D366] hover:bg-[#1EBE5D] text-white py-2 px-5 text-[11px] font-semibold uppercase tracking-[0.1em] transition-colors flex items-center gap-2 cursor-pointer border-none">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-          </svg>
-          WhatsApp
-        </a>
-      </div>
-
-      <button onclick="toggleMenu()" class="lg:hidden relative z-10 text-dark p-2 border-none bg-transparent cursor-pointer">
-        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-        <svg id="x-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-    </div>
-
-    <div id="mobile-menu" class="hidden fixed top-20 left-0 w-full bg-concrete shadow-2xl py-6 px-6 z-50" style="display: none;">
-      <nav class="flex flex-col gap-5">
-        <a href="#catalog" onclick="closeMenu()" class="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors">Каталог</a>
-        <a href="#about" onclick="closeMenu()" class="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors">О заводе</a>
-        <a href="#advantages" onclick="closeMenu()" class="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors">Преимущества</a>
-        <a href="#delivery" onclick="closeMenu()" class="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors">Доставка</a>
-        <a href="#certificates" onclick="closeMenu()" class="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors">Сертификаты</a>
-        <a href="#contacts" onclick="closeMenu()" class="text-[13px] font-semibold uppercase tracking-[0.1em] text-muted hover:text-rust transition-colors">Контакты</a>
-      </nav>
-      <div class="flex flex-col gap-4 pt-6 border-t border-dark/10 mt-6">
-        <a href="tel:+77022950040" class="text-[15px] font-semibold text-dark flex items-center gap-3 font-mono">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +7 702 295 00 40
-        </a>
-        <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" class="bg-[#25D366] hover:bg-[#1EBE5D] text-white w-full py-3 rounded text-[13px] font-semibold uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer border-none">
-          <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-          WhatsApp
-        </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="hero" class="relative min-h-screen flex items-center bg-dark overflow-hidden">
-    <div class="hero-grid-overlay"></div>
-    <div class="absolute inset-0 z-0">
-      <img src="hero-bg.jpg" alt="BetonTrade Производство ЖБИ" class="hero-bg-image w-full h-[120%] object-cover object-center opacity-100" style="will-change: transform;">
-      <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/60 to-dark/30"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/10 to-dark/30"></div>
-    </div>
-
-    <div class="max-w-[1400px] mx-auto px-6 relative z-10 w-full pt-32 pb-40 lg:pt-0 lg:pb-0">
-      <div class="max-w-2xl">
-        <div class="scroll-reveal inline-flex items-center gap-2 px-4 py-2 border border-white/10 rounded-sm mb-8">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-copper">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-          <span class="text-[11px] font-mono font-semibold uppercase tracking-[0.15em] text-copper">Производство по ГОСТ</span>
+  <!-- FULLSCREEN MENU -->
+  <div id="mobile-menu" class="mobile-menu" style="display:none;">
+    <div class="noise-overlay-dark" aria-hidden="true"></div>
+    <div class="container-x relative z-10 h-full flex flex-col">
+      <nav class="flex flex-col flex-1 lg:grid lg:grid-cols-12 lg:gap-12 pt-24 lg:pt-28 pb-8" aria-label="Основная навигация">
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <a href="#catalog" onclick="closeMenu()" class="mobile-link"><span>01</span>Каталог</a>
+          <a href="#about" onclick="closeMenu()" class="mobile-link"><span>02</span>О заводе</a>
+          <a href="#advantages" onclick="closeMenu()" class="mobile-link"><span>03</span>Преимущества</a>
+          <a href="#delivery" onclick="closeMenu()" class="mobile-link"><span>04</span>Доставка</a>
+          <a href="#certificates" onclick="closeMenu()" class="mobile-link"><span>05</span>Сертификаты</a>
+          <a href="#contacts" onclick="closeMenu()" class="mobile-link"><span>06</span>Контакты</a>
         </div>
-
-        <h1 class="scroll-reveal text-5xl lg:text-[82px] font-black text-white leading-[0.95] tracking-tighter mb-8 uppercase">
-          Завод ЖБИ<br>
-          <span class="text-rust">от производителя</span>
-        </h1>
-
-        <p class="scroll-reveal text-lg text-white/60 mb-12 max-w-lg leading-relaxed font-light">
-          Стабильное качество, точные сроки отгрузки и контроль на каждом этапе. Напрямую с завода в Шымкенте.
-        </p>
-
-        <div class="scroll-reveal flex flex-col sm:flex-row gap-4">
-          <a href="#catalog" class="cta-hero-primary">
-            Каталог продукции
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        <div class="hidden lg:flex lg:col-span-5 flex-col justify-center border-l border-white/10 pl-10 xl:pl-14">
+          <span class="text-[10.5px] font-extrabold uppercase tracking-[0.22em] text-white/50">Связаться</span>
+          <a href="tel:+77022950040" class="mt-4 self-start text-[26px] leading-none font-extrabold text-white tnum whitespace-nowrap hover:text-gold transition-colors duration-300 py-1">+7 702 295 00 40</a>
+          <p class="text-[13px] text-white/50 mt-4 font-medium leading-relaxed">г. Шымкент, ул. Койкелди батыра, 21</p>
+          <a href="mailto:betontradecompany@gmail.com" class="self-start text-[13px] text-white/50 mt-1.5 font-medium hover:text-gold transition-colors break-all">betontradecompany@gmail.com</a>
+          <div class="flex gap-3 mt-7">
+            <a href="https://t.me/betontradecom" target="_blank" rel="noreferrer" aria-label="Telegram" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-gold hover:border-gold/60 transition-colors duration-300">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </a>
+            <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-gold hover:border-gold/60 transition-colors duration-300">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </a>
+          </div>
+          <a href="#" onclick="event.preventDefault();closeMenu();openModal('form')" class="btn-pill btn-pill-gold btn-pill-sm mt-9 self-start">
+            <span>Оставить заявку</span>
+            <span class="btn-orb"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
           </a>
-          <a href="https://sabir2025.github.io/price" target="_blank" rel="noreferrer" class="cta-hero-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14,2 14,8 20,8"/></svg>
-            Скачать прайс PDF
+        </div>
+      </nav>
+      <div class="mt-auto pb-10 pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center md:justify-between gap-5 lg:hidden">
+        <div>
+          <a href="tel:+77022950040" class="block text-[26px] font-extrabold text-white tnum">+7 702 295 00 40</a>
+          <p class="text-[12px] text-white/50 mt-2 font-medium">г. Шымкент, ул. Койкелди батыра, 21</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 py-3.5 rounded-full border border-white/20 text-white text-[12px] font-bold uppercase tracking-[0.12em] hover:bg-white/10 transition-colors">
+            WhatsApp
+          </a>
+          <a href="#" onclick="event.preventDefault();closeMenu();openModal('form')" class="flex-1 inline-flex items-center justify-center gap-2 py-3.5 rounded-full bg-gold text-oxford text-[12px] font-bold uppercase tracking-[0.12em] hover:bg-[#c8b58d] transition-colors">
+            Заявка
           </a>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="absolute bottom-0 left-0 right-0 z-20 border-t border-white/10 bg-dark/80 backdrop-blur-md">
-      <div class="max-w-[1400px] mx-auto px-6">
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-0">
-          <div class="counter-cell py-8 px-6 border-r border-white/10">
-            <div class="counter font-mono text-4xl lg:text-5xl font-bold text-rust mb-2" data-target="26" data-suffix="+">0</div>
-            <div class="text-[11px] font-mono font-semibold text-white/40 uppercase tracking-[0.15em]">Лет на рынке</div>
+  <main>
+
+  <!-- HERO -->
+  <section id="hero" class="relative bg-ivory overflow-hidden">
+    <div class="container-x pt-[128px] lg:pt-[168px]">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+
+        <div class="lg:col-span-8">
+          <div class="scroll-reveal flex items-center gap-4">
+            <span class="h-px w-9 bg-gold" aria-hidden="true"></span>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.32em] text-oxford">Железобетонные изделия</span>
           </div>
-          <div class="counter-cell py-8 px-6 border-r border-white/10 hidden sm:block">
-            <div class="counter font-mono text-4xl lg:text-5xl font-bold text-rust mb-2" data-target="200" data-suffix="+">0</div>
-            <div class="text-[11px] font-mono font-semibold text-white/40 uppercase tracking-[0.15em]">Видов продукции</div>
+
+          <h1 class="scroll-reveal sd-1 mt-7 text-[clamp(2.7rem,6.4vw,5.4rem)] leading-[1.04] font-medium tracking-[-0.035em] text-oxford">
+            Железобетон,<br>
+            на котором держится<br>
+            город
+          </h1>
+        </div>
+
+        <div class="lg:col-span-4 flex flex-col gap-8 lg:pb-3">
+          <p class="scroll-reveal sd-2 text-[15px] leading-[1.75] text-slate font-medium max-w-sm">
+            Завод BetonTrade в Шымкенте производит лотки, крышки, бордюры и бруски — с контролем качества по ГОСТ и отгрузкой точно в срок.
+          </p>
+          <div class="scroll-reveal sd-3 flex flex-col sm:flex-row sm:items-center gap-5">
+            <a href="#catalog" class="btn-pill btn-pill-primary">
+              <span>Смотреть каталог</span>
+              <span class="btn-orb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </a>
+            <a href="https://sabir2025.github.io/price" target="_blank" rel="noreferrer" class="link-underline inline-flex items-center gap-2 text-[13px] font-bold text-oxford self-start sm:self-auto">
+              Прайс-лист PDF
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14,2 14,8 20,8"/></svg>
+            </a>
           </div>
-          <div class="counter-cell py-8 px-6 border-r border-white/10 hidden lg:block">
-            <div class="font-mono text-4xl lg:text-5xl font-bold text-rust mb-2">10k+</div>
-            <div class="text-[11px] font-mono font-semibold text-white/40 uppercase tracking-[0.15em]">Тонн ежемесячно</div>
+        </div>
+      </div>
+
+      <!-- MAIN VISUAL COMPOSITION -->
+      <div class="mt-14 lg:mt-20 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.85fr_0.6fr_0.6fr]">
+
+        <div class="comp-card md:col-span-2 lg:col-span-1 h-[500px] sm:h-[540px] md:h-[480px] lg:h-[580px]">
+          <div class="comp-media">
+            <img id="compMain" src="hero-bg.jpg" alt="Бетонный завод BetonTrade — производство ЖБИ в Шымкенте" class="comp-image" fetchpriority="high">
           </div>
-          <div class="counter-cell py-8 px-6">
-            <div class="font-mono text-4xl lg:text-5xl font-bold text-rust mb-2">100%</div>
-            <div class="text-[11px] font-mono font-semibold text-white/40 uppercase tracking-[0.15em]">Гарантия ГОСТ</div>
+          <div class="absolute inset-0 bg-gradient-to-t from-oxford/90 via-oxford/30 to-oxford/5 pointer-events-none" aria-hidden="true"></div>
+
+          <div class="absolute top-0 left-0 p-6 sm:p-8 lg:p-10">
+            <h2 class="text-white text-[24px] sm:text-[28px] lg:text-[31px] font-medium tracking-[-0.02em] leading-[1.18] max-w-[430px]">Собственное производство полного цикла</h2>
+            <p class="text-white/70 text-[13.5px] lg:text-[14.5px] leading-relaxed mt-3 max-w-[400px] font-medium">Бетонный узел, формовочные линии и склад готовой продукции — в одном месте, в Шымкенте.</p>
           </div>
+
+          <div class="comp-panel absolute left-4 right-20 bottom-4 sm:left-6 sm:bottom-6 sm:right-28 lg:right-auto lg:w-[410px]">
+            <div class="bg-white rounded-[24px] p-2.5 sm:p-3 grid grid-cols-3 gap-2 sm:gap-2.5">
+              <a href="#about" aria-label="Подробнее о заводе" class="w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-oxford text-white flex items-center justify-center hover:bg-deep transition-colors duration-300">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+              <div class="stat-chip"><div class="counter stat-num" data-target="26" data-suffix="+">26+</div><div class="stat-label">лет на рынке</div></div>
+              <div class="stat-chip"><div class="stat-num">10k+</div><div class="stat-label">тонн ежемесячно</div></div>
+              <div class="stat-chip"><div class="counter stat-num" data-target="200" data-suffix="+">200+</div><div class="stat-label">видов продукции</div></div>
+              <div class="stat-chip !bg-transparent !p-0 flex items-center justify-center">
+                <span class="icon-chip w-9 h-9 sm:w-11 sm:h-11 !bg-ivory"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              </div>
+              <div class="stat-chip"><div class="stat-num">ГОСТ</div><div class="stat-label">100% контроля</div></div>
+            </div>
+          </div>
+
+          <a href="#about" aria-label="О производстве" class="round-arrow round-arrow-glass absolute right-4 sm:right-6 bottom-4 sm:bottom-6 w-12 h-12 sm:w-14 sm:h-14">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="comp-card h-[300px] md:h-[420px] lg:h-[580px] cursor-pointer group" role="button" tabindex="0" onclick="openGallery('arychnye')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('arychnye')}">
+          <div class="comp-media"><img src="img/lotkiarychnye/lotki_1.jpg" alt="Лотки арычные — stacks на складе" loading="lazy" decoding="async" class="comp-image"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-oxford/80 via-oxford/10 to-transparent pointer-events-none" aria-hidden="true"></div>
+          <span class="absolute top-5 left-5 text-[11px] font-extrabold tracking-[0.24em] text-white/80">01</span>
+          <span class="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 border border-white/25 rounded-full px-3 py-1">ЛА</span>
+          <div class="absolute bottom-5 left-5">
+            <div class="v-title text-white text-[20px] md:text-[22px] font-medium tracking-[-0.01em]">Лотки арычные</div>
+          </div>
+          <span class="round-arrow round-arrow-glass absolute right-4 bottom-4 w-11 h-11">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </span>
+        </div>
+
+        <div class="comp-card h-[300px] md:h-[420px] lg:h-[580px] cursor-pointer group" role="button" tabindex="0" onclick="openGallery('bordur')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('bordur')}">
+          <div class="comp-media"><img src="img/bordur/bplitki_1.jpg" alt="Бордюры и тротуарная плитка" loading="lazy" decoding="async" class="comp-image"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-oxford/80 via-oxford/10 to-transparent pointer-events-none" aria-hidden="true"></div>
+          <span class="absolute top-5 left-5 text-[11px] font-extrabold tracking-[0.24em] text-white/80">02</span>
+          <span class="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 border border-white/25 rounded-full px-3 py-1">БР</span>
+          <div class="absolute bottom-5 left-5">
+            <div class="v-title text-white text-[20px] md:text-[22px] font-medium tracking-[-0.01em]">Бордюры и плитка</div>
+          </div>
+          <span class="round-arrow round-arrow-glass absolute right-4 bottom-4 w-11 h-11">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO STRIP -->
+    <div class="container-x mt-16 lg:mt-24 pb-20 lg:pb-24">
+      <div class="info-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-9 sm:gap-y-0">
+        <div class="info-item">
+          <span class="icon-chip"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3 class="info-title">Производство по ГОСТ</h3>
+          <p class="info-text">Каждая партия проходит контроль качества на заводе.</p>
+        </div>
+        <div class="info-item">
+          <span class="icon-chip"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <h3 class="info-title">Точные сроки отгрузки</h3>
+          <p class="info-text">Отгружаем по графику — без простоя вашей техники.</p>
+        </div>
+        <div class="info-item">
+          <span class="icon-chip"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 4V8l-7 4V8L2 12Z"/><path d="M17 2h1a1 1 0 0 1 1 1v4h-2V3a1 1 0 0 1 1-1z"/></svg></span>
+          <h3 class="info-title">Свой завод в Шымкенте</h3>
+          <p class="info-text">Полный цикл изготовления — от замеса до склада.</p>
+        </div>
+        <div class="info-item">
+          <span class="icon-chip"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14,2 14,8 20,8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg></span>
+          <h3 class="info-title">Документы к партии</h3>
+          <p class="info-text">Сертификаты и паспорта качества с каждой поставкой.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CATALOG -->
-  <section id="catalog" class="py-28 bg-concrete relative">
-    <div class="w-full px-6">
-      <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+  <section id="catalog" class="bg-white py-20 lg:py-28">
+    <div class="container-x">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16">
         <div class="scroll-reveal">
-          <span class="text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-copper mb-3 block">Продукция</span>
-          <h2 class="text-4xl lg:text-[52px] font-black text-dark uppercase tracking-tighter leading-[0.95] mb-4">Каталог<br>продукции</h2>
-          <p class="text-muted text-sm font-medium">Железобетонные изделия собственного производства</p>
+          <div class="flex items-center gap-4">
+            <span class="h-px w-9 bg-gold" aria-hidden="true"></span>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.32em] text-oxford">Каталог</span>
+          </div>
+          <h2 class="mt-6 text-[clamp(2.1rem,4.4vw,3.5rem)] font-medium tracking-[-0.03em] leading-[1.08] text-oxford">Продукция завода</h2>
         </div>
-        <a href="https://sabir2025.github.io/price/" target="_blank" rel="noreferrer" class="scroll-reveal hidden md:flex items-center gap-2 text-[12px] font-mono font-semibold uppercase text-dark hover:text-rust transition-colors cursor-pointer pb-2 border-b border-dark/20 hover:border-rust">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14,2 14,8 20,8"/></svg>
-            Скачать полный прайс
+        <div class="scroll-reveal sd-1 flex items-center gap-5">
+          <p class="hidden lg:block text-[13px] text-slate font-medium max-w-[240px]">Нажмите на раздел — откроется фотогалерея и типоразмеры.</p>
+          <a href="https://sabir2025.github.io/price/" target="_blank" rel="noreferrer" class="btn-pill btn-pill-outline">
+            <span>Прайс-лист PDF</span>
+            <span class="btn-orb btn-orb-line"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
           </a>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1100px] mx-auto">
-        <div onclick="openGallery('arychnye')" class="scroll-reveal catalog-card group cursor-pointer relative">
-          <div class="aspect-[4/3] w-full bg-dark/5 overflow-hidden">
-            <img src="img/lotkiarychnye/lotki_1.jpg" alt="Лотки арычные" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
-            <span class="absolute top-4 right-4 bg-dark text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider">ЛА</span>
-          </div>
-          <div class="catalog-card-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-            <h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Лотки арычные</h3>
-            <p class="text-white/50 text-sm font-mono">Железобетонные изделия</p>
-          </div>
-        </div>
-
-        <div onclick="openGallery('plity')" class="scroll-reveal catalog-card group cursor-pointer relative">
-          <div class="aspect-[4/3] w-full bg-dark/5 overflow-hidden">
-            <img src="img/zhbkryshkilotkov/zhbkr_1.jpg" alt="ЖБ Крышки лотков" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
-            <span class="absolute top-4 right-4 bg-dark text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider">ПП</span>
-          </div>
-          <div class="catalog-card-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-            <h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">ЖБ Крышки лотков</h3>
-            <p class="text-white/50 text-sm font-mono">Железобетонные изделия</p>
+      <div class="grid lg:grid-cols-[minmax(0,400px)_1fr] gap-10 lg:gap-16 items-start">
+        <div class="hidden lg:block">
+          <div class="catalog-preview sticky top-28">
+            <div class="relative aspect-[4/3] rounded-[28px] overflow-hidden">
+              <img id="catalog-preview-img" src="img/lotkiarychnye/lotki_1.jpg" alt="Фотография продукции" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-oxford/70 via-transparent to-transparent pointer-events-none" aria-hidden="true"></div>
+              <div id="catalog-preview-tag" class="absolute left-5 bottom-5 inline-flex items-center gap-2 bg-white/95 rounded-full px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.16em] text-oxford">ЛА · Лотки арычные</div>
+            </div>
+            <p class="text-[12px] text-slate font-medium mt-4 px-1">Реальные фото продукции со склада завода</p>
           </div>
         </div>
 
-        <div onclick="openGallery('telescop')" class="scroll-reveal catalog-card group cursor-pointer relative">
-          <div class="aspect-[4/3] w-full bg-dark/5 overflow-hidden">
-            <img src="img/lotkitelescop/lotkitelescop_1.png.png" alt="Лотки телескопические" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
-            <span class="absolute top-4 right-4 bg-dark text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider">ЛТ</span>
+        <div class="catalog-list">
+          <div class="catalog-row group" role="button" tabindex="0" onclick="openGallery('arychnye')" onmouseenter="setCatalogPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('arychnye')}" data-img="img/lotkiarychnye/lotki_1.jpg" data-tag="ЛА · Лотки арычные">
+            <span class="row-index">01</span>
+            <img src="img/lotkiarychnye/lotki_1.jpg" alt="" aria-hidden="true" loading="lazy" class="row-thumb lg:hidden">
+            <div class="min-w-0 flex-1">
+              <h3 class="row-title">Лотки арычные</h3>
+              <p class="row-text">Водоотводные и ирригационные каналы, арыки</p>
+            </div>
+            <span class="row-code">ЛА</span>
+            <span class="round-arrow round-arrow-line row-arrow w-10 h-10 sm:w-11 sm:h-11 shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
           </div>
-          <div class="catalog-card-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-            <h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Лотки телескопические</h3>
-            <p class="text-white/50 text-sm font-mono">Железобетонные изделия</p>
-          </div>
-        </div>
 
-        <div onclick="openGallery('teplotrass')" class="scroll-reveal catalog-card group cursor-pointer relative">
-          <div class="aspect-[4/3] w-full bg-dark/5 overflow-hidden">
-            <img src="img/lotkiteplotrass/lotkiteplo_1.png" alt="Лотки теплотрасс" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
-            <span class="absolute top-4 right-4 bg-dark text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider">ЛТП</span>
+          <div class="catalog-row group" role="button" tabindex="0" onclick="openGallery('plity')" onmouseenter="setCatalogPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('plity')}" data-img="img/zhbkryshkilotkov/zhbkr_1.jpg" data-tag="ПП · ЖБ крышки лотков">
+            <span class="row-index">02</span>
+            <img src="img/zhbkryshkilotkov/zhbkr_1.jpg" alt="" aria-hidden="true" loading="lazy" class="row-thumb lg:hidden">
+            <div class="min-w-0 flex-1">
+              <h3 class="row-title">ЖБ крышки лотков</h3>
+              <p class="row-text">Плиты и крышки для перекрытия лотковых каналов</p>
+            </div>
+            <span class="row-code">ПП</span>
+            <span class="round-arrow round-arrow-line row-arrow w-10 h-10 sm:w-11 sm:h-11 shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
           </div>
-          <div class="catalog-card-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-            <h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Лотки теплотрасс</h3>
-            <p class="text-white/50 text-sm font-mono">Железобетонные изделия</p>
-          </div>
-        </div>
 
-        <div onclick="openGallery('bordur')" class="scroll-reveal catalog-card group cursor-pointer relative">
-          <div class="aspect-[4/3] w-full bg-dark/5 overflow-hidden">
-            <img src="img/bordur/bplitki_1.jpg" alt="Бордюры и тротуарная плитка" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
-            <span class="absolute top-4 right-4 bg-dark text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider">БР</span>
+          <div class="catalog-row group" role="button" tabindex="0" onclick="openGallery('telescop')" onmouseenter="setCatalogPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('telescop')}" data-img="img/lotkitelescop/lotkitelescop_1.png.png" data-tag="ЛТ · Лотки телескопические">
+            <span class="row-index">03</span>
+            <img src="img/lotkitelescop/lotkitelescop_1.png.png" alt="" aria-hidden="true" loading="lazy" class="row-thumb lg:hidden">
+            <div class="min-w-0 flex-1">
+              <h3 class="row-title">Лотки телескопические</h3>
+              <p class="row-text">Составные каналы для тепловых сетей</p>
+            </div>
+            <span class="row-code">ЛТ</span>
+            <span class="round-arrow round-arrow-line row-arrow w-10 h-10 sm:w-11 sm:h-11 shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
           </div>
-          <div class="catalog-card-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-            <h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Бордюры и тротуарная плитка</h3>
-            <p class="text-white/50 text-sm font-mono">Железобетонные изделия</p>
-          </div>
-        </div>
 
-        <div onclick="openGallery('bruski')" class="scroll-reveal catalog-card group cursor-pointer relative">
-          <div class="aspect-[4/3] w-full bg-dark/5 overflow-hidden">
-            <img src="img/bruski/brus_1.png" alt="Бруски бетонные" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
-            <span class="absolute top-4 right-4 bg-dark text-white px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider">ББ</span>
+          <div class="catalog-row group" role="button" tabindex="0" onclick="openGallery('teplotrass')" onmouseenter="setCatalogPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('teplotrass')}" data-img="img/lotkiteplotrass/lotkiteplo_1.png" data-tag="ЛТП · Лотки теплотрасс">
+            <span class="row-index">04</span>
+            <img src="img/lotkiteplotrass/lotkiteplo_1.png" alt="" aria-hidden="true" loading="lazy" class="row-thumb lg:hidden">
+            <div class="min-w-0 flex-1">
+              <h3 class="row-title">Лотки теплотрасс</h3>
+              <p class="row-text">Лотковые каналы для теплотрасс и коммуникаций</p>
+            </div>
+            <span class="row-code">ЛТП</span>
+            <span class="round-arrow round-arrow-line row-arrow w-10 h-10 sm:w-11 sm:h-11 shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
           </div>
-          <div class="catalog-card-overlay absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10">
-            <h3 class="text-white text-xl font-bold uppercase tracking-tight mb-1">Бруски бетонные</h3>
-            <p class="text-white/50 text-sm font-mono">Железобетонные изделия</p>
+
+          <div class="catalog-row group" role="button" tabindex="0" onclick="openGallery('bordur')" onmouseenter="setCatalogPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('bordur')}" data-img="img/bordur/bplitki_1.jpg" data-tag="БР · Бордюры и плитка">
+            <span class="row-index">05</span>
+            <img src="img/bordur/bplitki_1.jpg" alt="" aria-hidden="true" loading="lazy" class="row-thumb lg:hidden">
+            <div class="min-w-0 flex-1">
+              <h3 class="row-title">Бордюры и плитка</h3>
+              <p class="row-text">Дорожные бордюры и тротуарная плитка</p>
+            </div>
+            <span class="row-code">БР</span>
+            <span class="round-arrow round-arrow-line row-arrow w-10 h-10 sm:w-11 sm:h-11 shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
+          </div>
+
+          <div class="catalog-row group" role="button" tabindex="0" onclick="openGallery('bruski')" onmouseenter="setCatalogPreview(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('bruski')}" data-img="img/bruski/brus_1.png" data-tag="ББ · Бруски бетонные">
+            <span class="row-index">06</span>
+            <img src="img/bruski/brus_1.png" alt="" aria-hidden="true" loading="lazy" class="row-thumb lg:hidden">
+            <div class="min-w-0 flex-1">
+              <h3 class="row-title">Бруски бетонные</h3>
+              <p class="row-text">Рядовые бруски для общестроительных работ</p>
+            </div>
+            <span class="row-code">ББ</span>
+            <span class="round-arrow round-arrow-line row-arrow w-10 h-10 sm:w-11 sm:h-11 shrink-0">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+            </span>
           </div>
         </div>
       </div>
@@ -251,47 +389,54 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="py-28 bg-white relative">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="scroll-reveal">
-          <span class="text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-copper mb-4 block">О заводе</span>
-          <h2 class="text-4xl lg:text-[52px] font-black text-rust uppercase tracking-tighter leading-[0.95] mb-8">Завод, которому<br>доверяют</h2>
-          <p class="text-muted text-base leading-relaxed mb-10 font-medium">
-            Мы — современное предприятие по производству железобетонных изделий, расположенное в г. Шымкент.
-            Наша миссия — обеспечивать строительный рынок Казахстана надежными и долговечными материалами,
-            соответствующими самым строгим стандартам ГОСТ.
+  <section id="about" class="bg-ivory py-20 lg:py-28 overflow-hidden">
+    <div class="container-x">
+      <div class="grid lg:grid-cols-12 gap-14 lg:gap-16 items-center">
+
+        <div class="lg:col-span-5">
+          <div class="scroll-reveal flex items-center gap-4">
+            <span class="h-px w-9 bg-gold" aria-hidden="true"></span>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.32em] text-oxford">О заводе</span>
+          </div>
+          <h2 class="scroll-reveal sd-1 mt-6 text-[clamp(2.1rem,4.4vw,3.5rem)] font-medium tracking-[-0.03em] leading-[1.08] text-oxford">Завод, которому доверяют</h2>
+          <p class="scroll-reveal sd-2 mt-6 text-[15px] leading-[1.75] text-slate font-medium">
+            Мы — современное предприятие по производству железобетонных изделий в Шымкенте. Наша задача — обеспечивать строительный рынок Казахстана надёжными и долговечными материалами, соответствующими стандартам ГОСТ.
           </p>
-          <ul class="space-y-5 mb-10">
-            <li class="flex items-start gap-4 text-dark font-medium text-[15px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-              <span>Использование цемента наивысших марок</span>
+          <ul class="scroll-reveal sd-3 mt-8 space-y-4">
+            <li class="flex items-center gap-4">
+              <span class="icon-chip w-9 h-9 shrink-0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span class="text-[14.5px] font-semibold text-oxford">Цемент наивысших марок в каждом замесе</span>
             </li>
-            <li class="flex items-start gap-4 text-dark font-medium text-[15px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-              <span>Контроль на каждом этапе</span>
+            <li class="flex items-center gap-4">
+              <span class="icon-chip w-9 h-9 shrink-0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span class="text-[14.5px] font-semibold text-oxford">Контроль на каждом этапе производства</span>
             </li>
-            <li class="flex items-start gap-4 text-dark font-medium text-[15px]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-              <span>Пакет сопроводительных документов</span>
+            <li class="flex items-center gap-4">
+              <span class="icon-chip w-9 h-9 shrink-0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              <span class="text-[14.5px] font-semibold text-oxford">Полный пакет сопроводительных документов</span>
             </li>
           </ul>
-          <a href="https://wa.me/77022950040?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%20%D0%B1%D1%8B%20%D0%BF%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D1%81%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8." target="_blank" rel="noreferrer" class="inline-flex items-center gap-3 bg-dark hover:bg-black text-white px-8 py-4 rounded text-[13px] font-semibold uppercase tracking-wider transition-colors cursor-pointer border-none">
-            Связаться с руководством
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
+          <div class="scroll-reveal sd-4 mt-10">
+            <a href="https://wa.me/77022950040?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%82%D0%B5%D0%BB%20%D0%B1%D1%8B%20%D0%BF%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D1%8C%20%D1%81%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%D0%BC%20%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B8." target="_blank" rel="noreferrer" class="btn-pill btn-pill-primary">
+              <span>Связаться с руководством</span>
+              <span class="btn-orb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            </a>
+          </div>
         </div>
 
-        <div class="scroll-reveal relative">
-          <div class="aspect-[4/5] overflow-hidden rounded-sm bg-concrete">
-            <img src="img/boss.jpg" alt="BetonTrade Производство ЖБИ" class="w-full h-full object-cover">
-          </div>
-          <div class="absolute -bottom-6 -left-6 bg-dark p-6 shadow-2xl max-w-xs">
-            <div class="flex items-center gap-3 mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#F2994A]"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-              <h4 class="font-bold text-white uppercase tracking-tight text-sm">Сертифицировано</h4>
+        <div class="lg:col-span-7 scroll-reveal sd-2">
+          <div class="relative max-w-[620px] lg:ml-auto">
+            <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-[28px] border border-gold/50 pointer-events-none" aria-hidden="true"></div>
+            <div class="relative rounded-[28px] overflow-hidden aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/4.6]">
+              <img src="img/boss.jpg" alt="Руководитель завода BetonTrade Company" loading="lazy" decoding="async" class="w-full h-full object-cover object-center">
             </div>
-            <p class="text-[12px] font-medium text-white/50">Зарегистрировано в реестре данных государственной системы технического регулирования</p>
+            <div class="absolute -bottom-7 left-5 sm:-left-8 bg-white rounded-[22px] p-5 sm:p-6 flex items-start gap-4 max-w-[320px] shadow-[0_24px_60px_-30px_rgba(0,33,71,0.35)]">
+              <span class="icon-chip w-11 h-11 shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+              <div>
+                <h3 class="text-[14px] font-extrabold text-oxford">Сертифицировано</h3>
+                <p class="text-[12px] text-slate font-medium leading-relaxed mt-1.5">Зарегистрировано в реестре государственной системы технического регулирования</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -299,126 +444,148 @@
   </section>
 
   <!-- ADVANTAGES -->
-  <section id="advantages" class="py-28 bg-concrete relative">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="scroll-reveal text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-copper mb-3 block">Почему мы</span>
-        <h2 class="scroll-reveal text-4xl lg:text-[52px] font-black text-dark uppercase tracking-tighter leading-[0.95]">Наши<br><span class="text-rust">преимущества</span></h2>
+  <section id="advantages" class="bg-white py-20 lg:py-28">
+    <div class="container-x">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16">
+        <div class="scroll-reveal">
+          <div class="flex items-center gap-4">
+            <span class="h-px w-9 bg-gold" aria-hidden="true"></span>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.32em] text-oxford">Преимущества</span>
+          </div>
+          <h2 class="mt-6 text-[clamp(2.1rem,4.4vw,3.5rem)] font-medium tracking-[-0.03em] leading-[1.08] text-oxford">Почему выбирают BetonTrade</h2>
+        </div>
+        <p class="scroll-reveal sd-1 text-[13px] text-slate font-medium max-w-[300px] md:pb-2">Работаем со строительными компаниями, подрядчиками и частными застройщиками по всему Казахстану.</p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="scroll-reveal advantage-card bg-white p-8 border border-concrete hover:border-rust/30 transition-all duration-500">
-          <div class="advantage-icon w-14 h-14 bg-rust/10 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="advantage-title text-lg font-bold uppercase tracking-tight mb-3">ГОСТ</h3>
-          <p class="advantage-text text-sm text-muted leading-relaxed">Вся продукция соответствует государственным стандартам качества</p>
+      <div class="scroll-reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[rgba(0,33,71,0.08)] rounded-[24px] overflow-hidden border border-[rgba(0,33,71,0.08)]">
+        <div class="adv-cell">
+          <span class="adv-index">01</span>
+          <h3 class="adv-title">Гарантия качества</h3>
+          <p class="adv-text">Цемент высших марок, контроль на каждом этапе и паспорт качества к каждой партии.</p>
         </div>
-
-        <div class="scroll-reveal advantage-card bg-white p-8 border border-concrete hover:border-rust/30 transition-all duration-500">
-          <div class="advantage-icon w-14 h-14 bg-rust/10 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14,2 14,8 20,8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
-          </div>
-          <h3 class="advantage-title text-lg font-bold uppercase tracking-tight mb-3">Сертификат соответствия</h3>
-          <p class="advantage-text text-sm text-muted leading-relaxed">Зарегистрированы в реестре данных государственной системы технического регулирования</p>
+        <div class="adv-cell">
+          <span class="adv-index">02</span>
+          <h3 class="adv-title">Сертификат соответствия</h3>
+          <p class="adv-text">Продукция зарегистрирована в реестре государственной системы технического регулирования РК.</p>
         </div>
-
-        <div class="scroll-reveal advantage-card bg-white p-8 border border-concrete hover:border-rust/30 transition-all duration-500">
-          <div class="advantage-icon w-14 h-14 bg-rust/10 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <h3 class="advantage-title text-lg font-bold uppercase tracking-tight mb-3">Оперативные сроки</h3>
-          <p class="advantage-text text-sm text-muted leading-relaxed">Отгрузка в кратчайшие сроки благодаря отлаженной логистике завода</p>
+        <div class="adv-cell">
+          <span class="adv-index">03</span>
+          <h3 class="adv-title">Оперативные сроки</h3>
+          <p class="adv-text">Отлаженная логистика завода позволяет отгружать заказы без ожидания и простоя.</p>
         </div>
-
-        <div class="scroll-reveal advantage-card bg-white p-8 border border-concrete hover:border-rust/30 transition-all duration-500">
-          <div class="advantage-icon w-14 h-14 bg-rust/10 flex items-center justify-center mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 4V8L8 12V8L2 12Z"/></svg>
-          </div>
-          <h3 class="advantage-title text-lg font-bold uppercase tracking-tight mb-3">Собственное производство</h3>
-          <p class="advantage-text text-sm text-muted leading-relaxed">Полный цикл изготовления ЖБИ на нашем заводе в Шымкенте</p>
+        <div class="adv-cell">
+          <span class="adv-index">04</span>
+          <h3 class="adv-title">Цены от производителя</h3>
+          <p class="adv-text">Прямые поставки с собственного завода — без посредников и наценок.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- DELIVERY -->
-  <section id="delivery" class="py-28 bg-dark text-white relative overflow-hidden">
-    <div class="noise-overlay-dark"></div>
-    <div class="max-w-[1400px] mx-auto px-6 relative z-10">
-      <div class="text-center mb-16">
-        <span class="scroll-reveal text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-copper mb-3 block">Логистика</span>
-        <h2 class="scroll-reveal text-4xl lg:text-[52px] font-black uppercase tracking-tighter leading-[0.95] mb-6">Условия<br><span class="text-rust">отгрузки и доставки</span></h2>
-        <p class="scroll-reveal text-white/50 text-base leading-relaxed font-medium max-w-2xl mx-auto">Бесперебойная цепочка логистики: отлаженная работа погрузочных узлов завода для оперативной передачи продукции покупателю.</p>
+  <section id="delivery" class="relative bg-oxford text-white py-20 lg:py-28 overflow-hidden">
+    <div class="noise-overlay-dark" aria-hidden="true"></div>
+    <div class="container-x relative z-10">
+      <div class="max-w-2xl">
+        <div class="scroll-reveal flex items-center gap-4">
+          <span class="h-px w-9 bg-gold" aria-hidden="true"></span>
+          <span class="text-[11px] font-extrabold uppercase tracking-[0.32em] text-gold">Логистика</span>
+        </div>
+        <h2 class="scroll-reveal sd-1 mt-6 text-[clamp(2.1rem,4.4vw,3.5rem)] font-medium tracking-[-0.03em] leading-[1.08] text-white">Отгрузка и доставка</h2>
+        <p class="scroll-reveal sd-2 mt-5 text-[15px] leading-[1.75] text-white/60 font-medium">Отлаженная цепочка поставки: от формовочной линии до вашего объекта — без лишних звеньев.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="scroll-reveal delivery-card bg-white/5 border border-white/10 p-10 hover:border-rust/30 transition-all duration-500">
-          <div class="delivery-icon w-14 h-14 bg-rust/10 flex items-center justify-center mb-8">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
-          </div>
-          <h3 class="delivery-title text-xl font-bold uppercase tracking-tight mb-4">Самовывоз</h3>
-          <p class="delivery-text text-white/50 text-sm leading-relaxed">Отгрузка железобетонных изделий осуществляется на условиях самовывоза со склада производителя.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12 lg:mt-16">
+        <div class="scroll-reveal step-card">
+          <span class="step-num">01</span>
+          <span class="step-note">Со склада завода</span>
+          <h3 class="step-title">Самовывоз</h3>
+          <p class="step-text">Отгрузка железобетонных изделий со склада производителя: г. Шымкент, ул. Койкелди батыра, 21.</p>
         </div>
+        <div class="scroll-reveal sd-1 step-card">
+          <span class="step-num">02</span>
+          <span class="step-note">Транспорт покупателя</span>
+          <h3 class="step-title">Подача транспорта</h3>
+          <p class="step-text">Покупатель обеспечивает подачу транспорта, соответствующего требованиям к перевозке ЖБИ.</p>
+        </div>
+        <div class="scroll-reveal sd-2 step-card">
+          <span class="step-num">03</span>
+          <span class="step-note">Силы поставщика</span>
+          <h3 class="step-title">Погрузочные работы</h3>
+          <p class="step-text">Погрузка продукции на борт транспортного средства выполняется силами поставщика.</p>
+        </div>
+      </div>
 
-        <div class="scroll-reveal delivery-card bg-white/5 border border-white/10 p-10 hover:border-rust/30 transition-all duration-500">
-          <div class="delivery-icon w-14 h-14 bg-rust/10 flex items-center justify-center mb-8">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
-          </div>
-          <h3 class="delivery-title text-xl font-bold uppercase tracking-tight mb-4">Подача транспорта</h3>
-          <p class="delivery-text text-white/50 text-sm leading-relaxed">Покупатель обеспечивает подачу транспорта, соответствующего требованиям к перевозке ЖБИ.</p>
-        </div>
-
-        <div class="scroll-reveal delivery-card bg-white/5 border border-white/10 p-10 hover:border-rust/30 transition-all duration-500">
-          <div class="delivery-icon w-14 h-14 bg-rust/10 flex items-center justify-center mb-8">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
-          </div>
-          <h3 class="delivery-title text-xl font-bold uppercase tracking-tight mb-4">Погрузочные работы</h3>
-          <p class="delivery-text text-white/50 text-sm leading-relaxed">Погрузка продукции осуществляется силами Поставщика</p>
-        </div>
+      <div class="scroll-reveal mt-10 lg:mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        <p class="text-[13px] text-white/50 font-medium max-w-xl leading-relaxed">Погрузка выполняется силами поставщика. Транспорт должен соответствовать регламенту безопасной перевозки железобетонных изделий.</p>
+        <a href="https://wa.me/77022950040?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%83%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%20%D0%BE%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8." target="_blank" rel="noreferrer" class="btn-pill btn-pill-gold shrink-0">
+          <span>Обсудить отгрузку</span>
+          <span class="btn-orb btn-orb-blue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- CERTIFICATES -->
-  <section id="certificates" class="py-28 bg-white relative">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+  <section id="certificates" class="bg-ivory py-20 lg:py-28">
+    <div class="container-x">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 lg:mb-16">
         <div class="scroll-reveal">
-          <span class="text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-copper mb-3 block">Документация</span>
-          <h2 class="text-4xl lg:text-[52px] font-black text-dark uppercase tracking-tighter leading-[0.95] mb-4">Сертификаты</h2>
-          <p class="text-muted text-sm font-medium max-w-lg">Сертификат соответствия, зарегистрированный в реестре данных государственной системы технического регулирования</p>
+          <div class="flex items-center gap-4">
+            <span class="h-px w-9 bg-gold" aria-hidden="true"></span>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.32em] text-oxford">Документация</span>
+          </div>
+          <h2 class="mt-6 text-[clamp(2.1rem,4.4vw,3.5rem)] font-medium tracking-[-0.03em] leading-[1.08] text-oxford">Сертификаты соответствия</h2>
         </div>
+        <p class="scroll-reveal sd-1 text-[13px] text-slate font-medium max-w-[320px] md:pb-2">Зарегистрированы в реестре данных государственной системы технического регулирования.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="scroll-reveal certificate-card group relative aspect-[3/4] bg-concrete overflow-hidden border border-concrete hover:shadow-2xl transition-all duration-500">
-          <div class="certificate-image w-full h-full p-3">
-            <img src="img/sert/SertBR.png" alt="Сертификат Бордюры" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-all duration-700">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+        <div class="scroll-reveal cert-card group" role="button" tabindex="0" onclick="viewCertificate('img/sert/SertBR.png','Сертификат · Бордюры')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();viewCertificate('img/sert/SertBR.png','Сертификат · Бордюры')}">
+          <div class="relative rounded-[18px] overflow-hidden bg-white border border-[rgba(0,33,71,0.06)]">
+            <img src="img/sert/SertBR.png" alt="Сертификат соответствия — бордюры" loading="lazy" decoding="async" class="cert-img w-full aspect-[3/4] object-cover">
+            <div class="cert-hover absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <span class="w-14 h-14 rounded-full bg-white/95 text-oxford flex items-center justify-center shadow-lg"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            </div>
           </div>
-          <div class="certificate-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <h3 class="text-white font-bold text-lg uppercase tracking-tight mb-2">Бордюры</h3>
-            <p class="text-copper font-mono text-xs">Сертификат соответствия</p>
-          </div>
-        </div>
-
-        <div class="scroll-reveal certificate-card group relative aspect-[3/4] bg-concrete overflow-hidden border border-concrete hover:shadow-2xl transition-all duration-500">
-          <div class="certificate-image w-full h-full p-3">
-            <img src="img/sert/SertLT.png" alt="Сертификат Теплотрассы" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-all duration-700">
-          </div>
-          <div class="certificate-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <h3 class="text-white font-bold text-lg uppercase tracking-tight mb-2">Теплотрассы</h3>
-            <p class="text-copper font-mono text-xs">Сертификат соответствия</p>
+          <div class="flex items-center justify-between px-1.5 pt-4 pb-1">
+            <div>
+              <h3 class="text-[14.5px] font-bold text-oxford">Бордюры</h3>
+              <p class="text-[10.5px] font-bold uppercase tracking-[0.16em] text-slate mt-1">Сертификат соответствия</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7A17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
           </div>
         </div>
 
-        <div class="scroll-reveal certificate-card group relative aspect-[3/4] bg-concrete overflow-hidden border border-concrete hover:shadow-2xl transition-all duration-500">
-          <div class="certificate-image w-full h-full p-3">
-            <img src="img/sert/Sert1P6.png" alt="Сертификат Лотки арычные" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-all duration-700">
+        <div class="scroll-reveal sd-1 cert-card group" role="button" tabindex="0" onclick="viewCertificate('img/sert/SertLT.png','Сертификат · Теплотрассы')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();viewCertificate('img/sert/SertLT.png','Сертификат · Теплотрассы')}">
+          <div class="relative rounded-[18px] overflow-hidden bg-white border border-[rgba(0,33,71,0.06)]">
+            <img src="img/sert/SertLT.png" alt="Сертификат соответствия — теплотрассы" loading="lazy" decoding="async" class="cert-img w-full aspect-[3/4] object-cover">
+            <div class="cert-hover absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <span class="w-14 h-14 rounded-full bg-white/95 text-oxford flex items-center justify-center shadow-lg"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            </div>
           </div>
-          <div class="certificate-overlay absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <h3 class="text-white font-bold text-lg uppercase tracking-tight mb-2">Лотки арычные</h3>
-            <p class="text-copper font-mono text-xs">Сертификат соответствия</p>
+          <div class="flex items-center justify-between px-1.5 pt-4 pb-1">
+            <div>
+              <h3 class="text-[14.5px] font-bold text-oxford">Теплотрассы</h3>
+              <p class="text-[10.5px] font-bold uppercase tracking-[0.16em] text-slate mt-1">Сертификат соответствия</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7A17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </div>
+        </div>
+
+        <div class="scroll-reveal sd-2 cert-card group" role="button" tabindex="0" onclick="viewCertificate('img/sert/Sert1P6.png','Сертификат · Лотки арычные')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();viewCertificate('img/sert/Sert1P6.png','Сертификат · Лотки арычные')}">
+          <div class="relative rounded-[18px] overflow-hidden bg-white border border-[rgba(0,33,71,0.06)]">
+            <img src="img/sert/Sert1P6.png" alt="Сертификат соответствия — лотки арычные" loading="lazy" decoding="async" class="cert-img w-full aspect-[3/4] object-cover">
+            <div class="cert-hover absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <span class="w-14 h-14 rounded-full bg-white/95 text-oxford flex items-center justify-center shadow-lg"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between px-1.5 pt-4 pb-1">
+            <div>
+              <h3 class="text-[14.5px] font-bold text-oxford">Лотки арычные</h3>
+              <p class="text-[10.5px] font-bold uppercase tracking-[0.16em] text-slate mt-1">Сертификат соответствия</p>
+            </div>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7A17A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
           </div>
         </div>
       </div>
@@ -426,230 +593,255 @@
   </section>
 
   <!-- CONTACTS -->
-  <section id="contacts" class="py-28 bg-concrete relative">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <div class="scroll-reveal mb-12">
-        <span class="text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-copper mb-3 block">Связаться с нами</span>
-        <h2 class="text-4xl lg:text-[52px] font-black text-dark uppercase tracking-tighter leading-[0.95]">Контакты</h2>
-      </div>
+  <section id="contacts" class="bg-white py-20 lg:py-28">
+    <div class="container-x">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div class="scroll-reveal space-y-8">
-          <div class="bg-white p-8 border border-concrete">
-            <div class="flex items-start gap-4 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="lg:col-span-5">
+          <div class="scroll-reveal flex items-center gap-4">
+            <span class="h-px w-9 bg-gold" aria-hidden="true"></span>
+            <span class="text-[11px] font-extrabold uppercase tracking-[0.32em] text-oxford">Контакты</span>
+          </div>
+          <h2 class="scroll-reveal sd-1 mt-6 text-[clamp(2.1rem,4.4vw,3.5rem)] font-medium tracking-[-0.03em] leading-[1.08] text-oxford">Свяжитесь с нами</h2>
+          <p class="scroll-reveal sd-2 mt-5 text-[15px] leading-[1.75] text-slate font-medium max-w-md">Ответим на вопросы по продукции, ценам и срокам отгрузки.</p>
+
+          <div class="scroll-reveal sd-3 mt-10">
+            <div class="contact-row">
+              <span class="icon-chip w-11 h-11 shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
               <div>
-                <h4 class="font-bold text-dark uppercase tracking-tight text-sm mb-1">Адрес</h4>
-                <p class="text-muted text-sm font-medium">г. Шымкент, ул. Койкелди батыра, 21</p>
+                <div class="contact-label">Адрес</div>
+                <div class="contact-value">г. Шымкент, ул. Койкелди батыра, 21</div>
               </div>
             </div>
-            <div class="flex items-start gap-4 mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div class="contact-row">
+              <span class="icon-chip w-11 h-11 shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
               <div>
-                <h4 class="font-bold text-dark uppercase tracking-tight text-sm mb-1">Телефон</h4>
-                <a href="tel:+77022950040" class="text-muted text-sm font-mono font-semibold hover:text-rust transition-colors">+7 702 295 00 40</a>
+                <div class="contact-label">Телефон</div>
+                <a href="tel:+77022950040" class="contact-value tnum hover:text-gold transition-colors duration-300">+7 702 295 00 40</a>
               </div>
             </div>
-            <div class="flex items-start gap-4 mb-8">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <div class="contact-row">
+              <span class="icon-chip w-11 h-11 shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
               <div>
-                <h4 class="font-bold text-dark uppercase tracking-tight text-sm mb-1">Email</h4>
-                <a href="mailto:betontradecompany@gmail.com" class="text-muted text-sm font-medium hover:text-rust transition-colors">betontradecompany@gmail.com</a>
+                <div class="contact-label">Email</div>
+                <a href="mailto:betontradecompany@gmail.com" class="contact-value hover:text-gold transition-colors duration-300">betontradecompany@gmail.com</a>
               </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-3">
-              <a href="https://t.me/betontradecom" target="_blank" rel="noreferrer" class="border-none bg-[#0088cc] hover:bg-[#0077b3] text-white py-3 px-6 rounded text-[13px] font-semibold uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.751-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.626 4.477-1.635z"/></svg>
-                Telegram
+          </div>
+
+          <div class="scroll-reveal sd-4 mt-10 flex flex-col gap-6">
+            <div class="flex gap-3">
+              <a href="https://t.me/betontradecom" target="_blank" rel="noreferrer" class="btn-pill btn-pill-outline !py-3 flex-1 justify-center">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                <span>Telegram</span>
               </a>
-              <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" class="border-none bg-[#25D366] hover:bg-[#1EBE5D] text-white py-3 px-6 rounded text-[13px] font-semibold uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                WhatsApp
+              <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" class="btn-pill btn-pill-outline !py-3 flex-1 justify-center">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+            <a href="#" onclick="event.preventDefault();openModal('form')" class="btn-pill btn-pill-primary w-full sm:w-auto justify-center">
+              <span>Оставить заявку</span>
+              <span class="btn-orb"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 scroll-reveal sd-2">
+          <div class="relative rounded-[28px] overflow-hidden border border-[rgba(0,33,71,0.08)] h-[420px] lg:h-[560px]">
+            <iframe src="https://maps.google.com/maps?q=42.293381,69.651204&t=&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" class="map-frame absolute inset-0 w-full h-full" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="BetonTrade на карте"></iframe>
+            <div class="absolute top-5 left-5 bg-white rounded-[20px] p-5 max-w-[270px] shadow-[0_20px_50px_-24px_rgba(0,33,71,0.4)]">
+              <div class="flex items-center gap-3">
+                <span class="icon-chip w-9 h-9 shrink-0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <div class="text-[13px] font-extrabold text-oxford">Завод BetonTrade</div>
+              </div>
+              <p class="text-[12px] text-slate font-medium mt-2.5 leading-relaxed">ул. Койкелди батыра, 21, г. Шымкент</p>
+              <a href="https://2gis.kz/shymkent/search/%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82%20%D1%83%D0%BB.%20%D0%9A%D0%BE%D0%B9%D0%BA%D0%B5%D0%BB%D0%B4%D0%B8%20%D0%B1%D0%B0%D1%82%D1%8B%D1%80%D0%B0%2021/geo/22659371324160968/69.651204%2C42.293381" target="_blank" rel="noreferrer" class="mt-3.5 inline-flex items-center gap-1.5 text-[12px] font-extrabold text-oxford link-underline">
+                Открыть в 2ГИС
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
               </a>
             </div>
           </div>
         </div>
-
-        <div class="scroll-reveal bg-dark aspect-[4/3] lg:aspect-auto rounded-sm overflow-hidden border border-white/10 relative">
-          <iframe src="https://maps.google.com/maps?q=42.293381,69.651204&t=&z=17&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; filter:grayscale(30%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="BetonTrade на карте"></iframe>
-          <a href="https://2gis.kz/shymkent/search/%D0%A8%D1%8B%D0%BC%D0%BA%D0%B5%D0%BD%D1%82%20%D1%83%D0%BB.%20%D0%9A%D0%BE%D0%B9%D0%BA%D0%B5%D0%BB%D0%B4%D0%B8%20%D0%B1%D0%B0%D1%82%D1%8B%D1%80%D0%B0%2021/geo/22659371324160968/69.651204%2C42.293381" target="_blank" rel="noreferrer" class="absolute bottom-4 right-4 bg-dark/90 text-white px-4 py-2 text-[11px] font-mono font-semibold uppercase tracking-wider hover:bg-dark transition-colors flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-            Открыть в 2ГИС
-          </a>
-        </div>
       </div>
     </div>
   </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="bg-dark pt-20 pb-10 text-white relative">
-    <div class="max-w-[1400px] mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-        <div>
-          <a href="#" onclick="scrollToTop(event)" class="inline-block mb-6">
-            <img src="LogoBTCorange-2.png" alt="BetonTrade" class="h-[62px] w-auto brightness-0 invert">
+  <footer class="relative bg-deep text-white pt-16 lg:pt-20 pb-8 overflow-hidden">
+    <div class="noise-overlay-dark" aria-hidden="true"></div>
+    <div class="container-x relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14">
+        <div class="lg:col-span-4">
+          <a href="#" onclick="scrollToTop(event)" class="inline-block">
+            <img src="LogoBTCgold.png" alt="BetonTrade" width="182" height="64" class="h-16 w-auto block">
           </a>
-          <p class="text-white/40 text-sm leading-relaxed mb-6 font-medium">
-            Надежный производитель железобетонных изделий в г. Шымкент.
-            Качество, проверенное временем и тысячами кубометров бетона.
+          <p class="text-[13.5px] text-white/50 leading-relaxed mt-6 max-w-xs font-medium">
+            Надёжный производитель железобетонных изделий. Качество, проверенное временем и тысячами кубометров бетона.
           </p>
+          <div class="flex gap-3 mt-7">
+            <a href="https://t.me/betontradecom" target="_blank" rel="noreferrer" aria-label="Telegram" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-gold hover:border-gold/60 transition-colors duration-300">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </a>
+            <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-gold hover:border-gold/60 transition-colors duration-300">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </a>
+          </div>
         </div>
 
-        <div>
-          <h4 class="font-bold uppercase tracking-[0.15em] mb-6 text-[12px] font-mono">Навигация</h4>
-          <ul class="space-y-3">
-            <li><a href="#catalog" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Каталог</a></li>
-            <li><a href="#about" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">О заводе</a></li>
-            <li><a href="#advantages" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Преимущества</a></li>
-            <li><a href="#delivery" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Доставка</a></li>
-            <li><a href="#certificates" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Сертификаты</a></li>
-            <li><a href="#contacts" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Контакты</a></li>
+        <div class="lg:col-span-2">
+          <h3 class="footer-h">Навигация</h4>
+          <ul class="space-y-3 mt-5">
+            <li><a href="#catalog" class="footer-link">Каталог</a></li>
+            <li><a href="#about" class="footer-link">О заводе</a></li>
+            <li><a href="#advantages" class="footer-link">Преимущества</a></li>
+            <li><a href="#delivery" class="footer-link">Доставка</a></li>
+            <li><a href="#certificates" class="footer-link">Сертификаты</a></li>
+            <li><a href="#contacts" class="footer-link">Контакты</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="font-bold uppercase tracking-[0.15em] mb-6 text-[12px] font-mono">Продукция</h4>
-          <ul class="space-y-3">
-            <li><a href="#catalog" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Лотки арычные</a></li>
-            <li><a href="#catalog" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">ЖБ Крышки лотков</a></li>
-            <li><a href="#catalog" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Лотки телескопические</a></li>
-            <li><a href="#catalog" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Лотки теплотрасс</a></li>
-            <li><a href="#catalog" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Бордюры и плитка</a></li>
-            <li><a href="#catalog" class="text-white/40 hover:text-rust transition-colors text-sm font-medium">Бруски бетонные</a></li>
+        <div class="lg:col-span-3">
+          <h3 class="footer-h">Продукция</h4>
+          <ul class="space-y-3 mt-5">
+            <li><a href="#catalog" class="footer-link">Лотки арычные</a></li>
+            <li><a href="#catalog" class="footer-link">ЖБ крышки лотков</a></li>
+            <li><a href="#catalog" class="footer-link">Лотки телескопические</a></li>
+            <li><a href="#catalog" class="footer-link">Лотки теплотрасс</a></li>
+            <li><a href="#catalog" class="footer-link">Бордюры и плитка</a></li>
+            <li><a href="#catalog" class="footer-link">Бруски бетонные</a></li>
           </ul>
         </div>
 
-        <div>
-          <h4 class="font-bold uppercase tracking-[0.15em] mb-6 text-[12px] font-mono">Контакты</h4>
-          <ul class="space-y-4 text-sm font-medium">
-            <li class="flex items-start gap-3 text-white/40">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>г. Шымкент, ул. Койкелди батыра, 21</span>
+        <div class="lg:col-span-3">
+          <h3 class="footer-h">Контакты</h4>
+          <ul class="space-y-4 mt-5">
+            <li class="flex items-start gap-3 text-[13.5px] text-white/50 font-medium">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7A17A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>г. Шымкент,<br>ул. Койкелди батыра, 21</span>
             </li>
-            <li class="flex items-start gap-3 text-white/40">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-rust shrink-0 mt-0.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <a href="tel:+77022950040" class="hover:text-rust transition-colors font-mono">+7 702 295 00 40</a>
+            <li class="flex items-center gap-3 text-[13.5px]">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7A17A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+77022950040" class="text-white/80 hover:text-gold transition-colors tnum font-semibold">+7 702 295 00 40</a>
             </li>
-            <li class="flex flex-col gap-3 pt-2">
-              <a href="https://t.me/betontradecom" target="_blank" rel="noreferrer" class="border-none bg-[#0088cc] hover:bg-[#0077b3] text-white py-3 px-6 rounded text-[13px] font-semibold uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.911.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.751-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.831-2.529 6.998-3.015 3.333-1.386 4.025-1.626 4.477-1.635z"/></svg>
-                Telegram
-              </a>
-              <a href="https://wa.me/77022950040" target="_blank" rel="noreferrer" class="border-none bg-[#25D366] hover:bg-[#1EBE5D] text-white py-3 px-6 rounded text-[13px] font-semibold uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                WhatsApp
-              </a>
+            <li class="flex items-center gap-3 text-[13.5px]">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B7A17A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <a href="mailto:betontradecompany@gmail.com" class="text-white/80 hover:text-gold transition-colors font-semibold break-all">betontradecompany@gmail.com</a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="text-white/30 text-xs font-medium">&copy; 2026 BetonTrade Company. Все права защищены.</p>
+      <div class="mt-6 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-[12px] text-white/50 font-medium">&copy; 2026 BetonTrade Company. Все права защищены.</p>
         <div class="flex items-center gap-6">
-          <button onclick="openModal('privacy')" class="border-none bg-transparent text-white/30 hover:text-white transition-colors text-xs font-medium cursor-pointer">Политика конфиденциальности</button>
-          <button onclick="openModal('offer')" class="border-none bg-transparent text-white/30 hover:text-white transition-colors text-xs font-medium cursor-pointer">Договор оферты</button>
+          <button onclick="openModal('privacy')" class="bg-transparent border-none text-[12px] font-medium text-white/50 hover:text-white transition-colors cursor-pointer p-0">Политика конфиденциальности</button>
+          <button onclick="openModal('offer')" class="bg-transparent border-none text-[12px] font-medium text-white/50 hover:text-white transition-colors cursor-pointer p-0">Договор оферты</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- MODALS -->
-
-  <!-- Form Modal -->
-  <div id="form-modal" class="modal-backdrop hidden fixed inset-0 z-[100] items-center justify-center bg-black/60 backdrop-blur-sm p-4 cursor-pointer" onclick="if(event.target === this) closeModal('form')">
-    <div class="modal-content bg-white rounded p-8 max-w-md w-full relative cursor-default" onclick="event.stopPropagation()">
-      <button onclick="closeModal('form')" class="absolute top-4 right-4 text-muted hover:text-dark cursor-pointer bg-transparent rounded-full p-1 z-10 border-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  <!-- FORM MODAL -->
+  <div id="form-modal" class="modal-backdrop hidden fixed inset-0 z-[100] items-center justify-center bg-oxford/60 backdrop-blur-sm p-4 cursor-pointer" onclick="if(event.target === this) closeModal('form')">
+    <div class="modal-content bg-white rounded-[24px] p-7 sm:p-9 max-w-md w-full relative cursor-default border border-[rgba(0,33,71,0.06)]" onclick="event.stopPropagation()">
+      <button onclick="closeModal('form')" aria-label="Закрыть" class="absolute top-4 right-4 text-slate hover:text-oxford transition-colors cursor-pointer bg-transparent border-none rounded-full p-1.5 z-10">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
-      <h3 class="text-2xl text-dark mb-2 uppercase tracking-tight font-bold">Оставить заявку</h3>
-      <p class="text-muted mb-6 text-sm font-medium">Оставьте номер телефона, и наш менеджер перезвонит вам для обсуждения заявки.</p>
-      <form id="callback-form" class="flex flex-col gap-4">
+      <span class="h-px w-9 bg-gold block" aria-hidden="true"></span>
+      <h3 class="text-[24px] font-medium tracking-[-0.02em] text-oxford mt-5">Оставить заявку</h3>
+      <p class="text-slate text-[13.5px] leading-relaxed mt-2.5 font-medium">Оставьте номер телефона — наш менеджер перезвонит и обсудит вашу заявку.</p>
+      <form id="callback-form" class="flex flex-col gap-4 mt-7">
         <div>
-          <label class="block text-[11px] text-muted uppercase tracking-[0.15em] mb-2 font-mono font-semibold">Номер телефона</label>
-          <input type="tel" name="phone" id="callback-phone" required placeholder="+7 (___) ___-__-__" class="w-full bg-concrete border border-concrete rounded px-4 py-3 text-dark font-medium focus:outline-none focus:border-rust transition-colors">
+          <label for="callback-phone" class="block text-[10px] text-slate uppercase tracking-[0.2em] mb-2 font-extrabold">Номер телефона</label>
+          <input type="tel" name="phone" id="callback-phone" required placeholder="+7 (___) ___-__-__" class="field-input">
         </div>
-        <button type="submit" class="w-full bg-rust hover:bg-rust/90 text-white uppercase py-4 rounded transition-colors mt-2 cursor-pointer border-none font-semibold text-[13px] tracking-wider">
-          Отправить
+        <button type="submit" class="btn-pill btn-pill-primary w-full justify-center mt-2">
+          <span>Отправить</span>
+          <span class="btn-orb"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
         </button>
       </form>
-      <p class="text-[10px] text-muted/60 text-center mt-4 font-medium">Нажимая на кнопку, вы соглашаетесь с условиями обработки данных.</p>
+      <p class="text-[10.5px] text-slate/70 text-center mt-5 font-medium">Нажимая на кнопку, вы соглашаетесь с условиями обработки данных.</p>
     </div>
   </div>
 
-  <!-- Privacy Modal -->
-  <div id="privacy-modal" class="modal-backdrop hidden fixed inset-0 z-[100] items-center justify-center bg-black/60 backdrop-blur-sm p-4 cursor-pointer" onclick="if(event.target === this) closeModal('privacy')">
-    <div class="modal-content bg-white rounded p-8 max-w-3xl w-full relative max-h-[85vh] flex flex-col cursor-default" onclick="event.stopPropagation()">
-      <button onclick="closeModal('privacy')" class="absolute top-4 right-4 text-muted hover:text-dark cursor-pointer bg-white rounded-full p-1 z-10 shadow-sm border border-concrete border-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  <!-- PRIVACY MODAL -->
+  <div id="privacy-modal" class="modal-backdrop hidden fixed inset-0 z-[100] items-center justify-center bg-oxford/60 backdrop-blur-sm p-4 cursor-pointer" onclick="if(event.target === this) closeModal('privacy')">
+    <div class="modal-content bg-white rounded-[24px] p-7 sm:p-9 max-w-3xl w-full relative max-h-[85vh] flex flex-col cursor-default border border-[rgba(0,33,71,0.06)]" onclick="event.stopPropagation()">
+      <button onclick="closeModal('privacy')" aria-label="Закрыть" class="absolute top-4 right-4 text-slate hover:text-oxford transition-colors cursor-pointer bg-transparent border-none rounded-full p-1.5 z-10">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
-      <h3 class="text-2xl font-bold text-dark mb-6 uppercase tracking-tight pr-8 shrink-0">Политика конфиденциальности</h3>
-      <div class="overflow-y-auto pr-4 text-sm text-muted space-y-4 font-medium leading-relaxed custom-scrollbar pb-4">
+      <span class="h-px w-9 bg-gold block shrink-0" aria-hidden="true"></span>
+      <h3 class="text-[22px] font-medium tracking-[-0.02em] text-oxford mt-5 mb-5 shrink-0 pr-8">Политика конфиденциальности</h3>
+      <div class="overflow-y-auto pr-3 text-[13.5px] text-slate space-y-4 font-medium leading-relaxed custom-scrollbar pb-2">
         <p>Настоящая Политика конфиденциальности разработана в соответствии с Законом Республики Казахстан от 21 мая 2013 года № 94-V «О персональных данных и их защите» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных в компании «BetonTrade Company».</p>
-        <h4 class="font-bold text-dark text-base mt-2">1. Общие положения</h4>
+        <h4 class="doc-sub">1. Общие положения</h4>
         <p>1.1. Использование сервисов сайта означает безоговорочное согласие Пользователя с настоящей Политикой конфиденциальности.</p>
-        <h4 class="font-bold text-dark text-base mt-2">2. Собираемая информация</h4>
+        <h4 class="doc-sub">2. Собираемая информация</h4>
         <p>Мы осуществляем сбор следующих данных: номер телефона, имя (если указывается), а также технические данные (cookie, IP-адрес) для улучшения работы нашего сайта.</p>
-        <h4 class="font-bold text-dark text-base mt-2">3. Цели сбора данных</h4>
+        <h4 class="doc-sub">3. Цели сбора данных</h4>
         <p>Персональные данные используются в целях: Связи с Пользователем для обработки заявок и предоставления консультаций по приобретению ЖБИ; Улучшения качества обслуживания.</p>
-        <h4 class="font-bold text-dark text-base mt-2">4. Защита и передача данных</h4>
+        <h4 class="doc-sub">4. Защита и передача данных</h4>
         <p>Мы принимаем все необходимые организационные и технические меры для защиты персональной информации от неправомерного доступа. Передача данных третьим лицам исключена, за исключением случаев, прямо предусмотренных законодательством Республики Казахстан.</p>
-        <h4 class="font-bold text-dark text-base mt-2">5. Контакты</h4>
+        <h4 class="doc-sub">5. Контакты</h4>
         <p>Для отзыва согласия на обработку ваших персональных данных или по иным вопросам вы можете связаться с нами по телефону: +7 702 295 00 40.</p>
-        <p class="mt-4 text-xs italic text-muted/50">г. Шымкент, ул. Койкелди батыра, 21. BetonTrade Company.</p>
+        <p class="mt-4 text-[11.5px] italic text-slate/60">г. Шымкент, ул. Койкелди батыра, 21. BetonTrade Company.</p>
       </div>
     </div>
   </div>
 
-  <!-- Offer Modal -->
-  <div id="offer-modal" class="modal-backdrop hidden fixed inset-0 z-[100] items-center justify-center bg-black/60 backdrop-blur-sm p-4 cursor-pointer" onclick="if(event.target === this) closeModal('offer')">
-    <div class="modal-content bg-white rounded p-8 max-w-3xl w-full relative max-h-[85vh] flex flex-col cursor-default" onclick="event.stopPropagation()">
-      <button onclick="closeModal('offer')" class="absolute top-4 right-4 text-muted hover:text-dark cursor-pointer bg-white rounded-full p-1 z-10 shadow-sm border border-concrete border-none">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  <!-- OFFER MODAL -->
+  <div id="offer-modal" class="modal-backdrop hidden fixed inset-0 z-[100] items-center justify-center bg-oxford/60 backdrop-blur-sm p-4 cursor-pointer" onclick="if(event.target === this) closeModal('offer')">
+    <div class="modal-content bg-white rounded-[24px] p-7 sm:p-9 max-w-3xl w-full relative max-h-[85vh] flex flex-col cursor-default border border-[rgba(0,33,71,0.06)]" onclick="event.stopPropagation()">
+      <button onclick="closeModal('offer')" aria-label="Закрыть" class="absolute top-4 right-4 text-slate hover:text-oxford transition-colors cursor-pointer bg-transparent border-none rounded-full p-1.5 z-10">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
       </button>
-      <h3 class="text-2xl font-bold text-dark mb-6 uppercase tracking-tight pr-8 shrink-0">Договор оферты</h3>
-      <div class="overflow-y-auto pr-4 text-sm text-muted space-y-4 font-medium leading-relaxed custom-scrollbar pb-4">
+      <span class="h-px w-9 bg-gold block shrink-0" aria-hidden="true"></span>
+      <h3 class="text-[22px] font-medium tracking-[-0.02em] text-oxford mt-5 mb-5 shrink-0 pr-8">Договор оферты</h3>
+      <div class="overflow-y-auto pr-3 text-[13.5px] text-slate space-y-4 font-medium leading-relaxed custom-scrollbar pb-2">
         <p>Настоящий документ является официальным предложением (публичной офертой) компании «BetonTrade Company» (далее — Продавец) неопределенному кругу лиц, в соответствии со статьей 395 Гражданского кодекса Республики Казахстан.</p>
-        <h4 class="font-bold text-dark text-base mt-2">1. Предмет договора</h4>
+        <h4 class="doc-sub">1. Предмет договора</h4>
         <p>1.1. Продавец обязуется передать в собственность Покупателю железобетонные изделия (далее — Товар), а Покупатель обязуется принять и оплатить Товар на условиях настоящей Оферты.</p>
-        <h4 class="font-bold text-dark text-base mt-2">2. Порядок оформления заказа</h4>
+        <h4 class="doc-sub">2. Порядок оформления заказа</h4>
         <p>2.1. Заказ оформляется путем телефонного звонка, оставления электронной заявки на сайте или через мессенджер WhatsApp.</p>
-        <h4 class="font-bold text-dark text-base mt-2">3. Стоимость и порядок расчетов</h4>
+        <h4 class="doc-sub">3. Стоимость и порядок расчетов</h4>
         <p>3.1. Цены на Товар определяются по действующему прайс-листу. Продавец оставляет за собой право изменять цены в одностороннем порядке (измененные цены не применяются к уже подтвержденным заказам).</p>
-        <h4 class="font-bold text-dark text-base mt-2">4. Условия отгрузки и доставки</h4>
+        <h4 class="doc-sub">4. Условия отгрузки и доставки</h4>
         <p>4.1. Отгрузка Товара осуществляется на условиях самовывоза со склада Продавца (г. Шымкент, ул. Койкелди батыра, 21), если иное не оговорено дополнительно.<br>4.2. Погрузка продукции на борт транспортного средства Покупателя осуществляется силами Продавца.<br>4.3. Покупатель обязуется обеспечить подачу транспорта, соответствующего требованиям регламента безопасной перевозки ЖБИ.</p>
-        <h4 class="font-bold text-dark text-base mt-2">5. Ответственность сторон</h4>
+        <h4 class="doc-sub">5. Ответственность сторон</h4>
         <p>5.1. Стороны несут ответственность за неисполнение или ненадлежащее исполнение условий настоящего договора в соответствии с действующим законодательством Республики Казахстан.</p>
       </div>
     </div>
   </div>
 
-  <!-- Gallery Modal -->
-  <div id="gallery-modal" class="modal-backdrop hidden fixed inset-0 z-[120] items-center justify-center bg-black/90 p-4 backdrop-blur-sm cursor-pointer" onclick="if(event.target === this) closeModal('gallery')">
-    <div class="modal-content relative w-full max-w-5xl h-[80vh] flex flex-col cursor-default" onclick="event.stopPropagation()">
-      <button onclick="closeModal('gallery')" class="absolute top-4 right-4 text-white hover:text-rust transition-colors z-10 border-none bg-transparent cursor-pointer p-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-      </button>
-      <h3 id="gallery-modal-title" class="text-white text-xl font-bold uppercase tracking-wider mb-4">Название</h3>
-      <div class="relative flex-1 bg-black/50 rounded overflow-hidden border border-white/10 shadow-2xl">
+  <!-- GALLERY MODAL -->
+  <div id="gallery-modal" class="modal-backdrop hidden fixed inset-0 z-[120] items-center justify-center bg-deep/95 p-4 backdrop-blur-sm cursor-pointer" onclick="if(event.target === this) closeModal('gallery')">
+    <div class="modal-content relative w-full max-w-5xl flex flex-col cursor-default" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between mb-4 shrink-0">
+        <h3 id="gallery-modal-title" class="text-white text-[18px] font-medium tracking-[-0.01em]">Название</h3>
+        <button onclick="closeModal('gallery')" aria-label="Закрыть" class="text-white/60 hover:text-white transition-colors border-none bg-transparent cursor-pointer p-2">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="relative h-[72vh] bg-oxford/60 rounded-[24px] overflow-hidden border border-white/10">
         <div id="gallery-nav-buttons" class="absolute inset-0 hidden pointer-events-none z-10">
-          <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white hover:text-black text-white rounded-full transition-all backdrop-blur border-none cursor-pointer pointer-events-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          <button onclick="prevSlide()" aria-label="Предыдущее фото" class="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-gold hover:text-oxford text-white flex items-center justify-center transition-all duration-300 backdrop-blur border-none cursor-pointer pointer-events-auto">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
           </button>
-          <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/10 hover:bg-white hover:text-black text-white rounded-full transition-all backdrop-blur border-none cursor-pointer pointer-events-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <button onclick="nextSlide()" aria-label="Следующее фото" class="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-gold hover:text-oxford text-white flex items-center justify-center transition-all duration-300 backdrop-blur border-none cursor-pointer pointer-events-auto">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>
-          <div id="gallery-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-black/50 px-4 py-2 rounded-full backdrop-blur">
-            <!-- populated by js -->
-          </div>
+          <div id="gallery-dots" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 bg-oxford/60 px-4 py-2.5 rounded-full backdrop-blur border border-white/10"></div>
         </div>
-        <div class="h-full flex items-center justify-center p-4">
-          <img id="gallery-image" src="" alt="Gallery Image" class="max-w-full max-h-full object-contain">
+        <div class="h-full flex items-center justify-center p-4 sm:p-6">
+          <img id="gallery-image" src="" alt="Фотография продукции" class="max-w-full max-h-full object-contain rounded-lg">
         </div>
       </div>
     </div>
   </div>
 
   <script src="js/script.js"></script>
+
 </body>
 </html>

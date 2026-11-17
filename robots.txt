@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img/sert/
+
+Sitemap: https://betontrade.kz/sitemap.xml
